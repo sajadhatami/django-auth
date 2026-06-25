@@ -1,0 +1,20 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <h1>welcome {{ user.username }}</h1>
+    <h2>we are glad to have you here</h2>
+    <p>name: {{ user.username}}</p>
+    <p>email:{{ user.email }}</p>
+    <p>admin permisson: {{ user.is_staff }}</p>
+    
+    
+    <form method="post" action= {% url "logout" %}>
+    {% csrf_token %}
+    <h2><button type="submit">log out</button></h2>
+    </form>
+</body>
+</html>
